@@ -1,0 +1,19 @@
+<table class="bingoPad">
+    <tr ng-repeat='(i, rows) in bingoObj.numbers track by $index'>
+        <td ng-repeat='(j, cell) in rows track by $index'>
+            <div ng-click="bingoObj.activeState && bingoCtrl.checkNumber(bingoObj.numbers[i][j])"
+                 ng-class='{checked: bingoObj.numbers[i][j].checked, acitve: bingoObj.activeState}'
+                 class="bingoCell">
+                {{bingoObj.numbers[i][j].value}}
+            </div>
+            <!-- Experiment -->
+            <svg ng-show="bingoObj.numbers[i][j].checked" height="120" width="120" class="svgBoard">
+                <line ng-show="bingoObj.numbers[i][j].rowChecked" stroke-dasharray="15,10" x1="0" y1="60" x2="120" y2="60"/>
+                <line ng-show="bingoObj.numbers[i][j].columnChecked" stroke-dasharray="15,10" x1="60" y1="0" x2="60" y2="120"/>
+                <line ng-show="bingoObj.numbers[i][j].diagonal_1_checked" stroke-dasharray="15,10" x1="0" y1="0" x2="120" y2="120"/>                
+                <line ng-show="bingoObj.numbers[i][j].diagonal_2_checked" stroke-dasharray="15,10" x1="0" y1="120" x2="120" y2="0"/>
+            </svg>
+            <!-- Experiment -->
+        </td>
+    </tr>
+</table>

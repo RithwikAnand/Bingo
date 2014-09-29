@@ -1,0 +1,11 @@
+<ul>
+    <li class="player" ng-repeat="(i, player) in playerListCtrl.playerList track by $index" ng-class="{turn:player.turn}">
+        <span ng-hide="!player.position" class="position">{{player.position}}</span>
+        <span ng-hide="player.$id === playerListCtrl.userId" class="playerName" >{{player.name}}</span>
+        <input ng-show="player.$id === playerListCtrl.userId" ng-model="player.name" class="playerName" ng-change="playerListCtrl.nameChange()"/>
+        <span ng-show="player.$id === playerListCtrl.userId">(you)</span>        
+        <br/>
+        <span ng-show="number" class="playerNumber badge" ng-repeat="(j, number) in player.numbersChecked track by $index">{{number}}</span>
+        <span ng-show="player.turn" class="playerNumber badge">?</span>
+    </li> 
+</ul>

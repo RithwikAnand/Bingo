@@ -1,0 +1,124 @@
+body {
+    background-image: url(images/BingoBG.jpg);
+    background-size: cover;
+}
+
+.bingoContainer {
+    margin: 0px auto;
+    width: 600px;
+    height: 600px;
+    color: white;
+    font: 50px fantasy;
+}
+
+.bingoHeader {
+    text-align: center;
+    font-size: 60px;
+    padding-left: 60px;
+}
+
+.bingoHeader .striked {
+    text-decoration: line-through;
+    color: gold;
+}
+
+.bingoPad {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    margin: 20px 0px;
+    background: rgba(0, 0, 0, 0.71);
+}
+
+tr {
+    border: 1px solid #ddd;
+}
+
+td {
+    width: 20%;
+    height: 20%;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+.bingoCell {
+    text-align: center;
+}
+
+.bingoCell.acitve {
+    cursor: pointer;
+}
+
+.bingoCell:hover {
+    color: gold;
+    opacity: 0.3;
+    text-decoration: line-through;
+}
+
+.bingoCell.checked {
+    color: gold;
+    text-decoration: line-through;
+    opacity: 1;
+}
+
+.bingoCell.checked:hover {
+    color: gold;
+    text-decoration: line-through;
+}
+
+.svgBoard {
+    position: absolute;
+    top: 0px
+}
+
+.svgBoard line {
+    stroke: gold;
+    stroke-width: 5px;
+}
+
+.playerListHolder {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    background: rgba(0, 0, 0, 0.71);
+    color: rgb(255, 255, 255);
+    font: 25px cursive;
+    width: 200px;
+    height: 600px;
+    border: 1px solid #ddd;
+}
+
+.playerListHolder ul {
+    list-style-type: none;
+}
+
+.playerListHolder ul li {
+    margin-left: -40px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.playerListHolder ul li.turn {
+    background: gold;
+    opacity: 0.7;
+}
+
+.playerListHolder ul li .position {
+    margin-right: 5px;
+}
+
+.playerListHolder ul li .playerNumber {
+    margin-right: 5px;
+}
+
+.playerListHolder ul li input.playerName {
+    margin-top: 10px;
+    background: transparent;
+    width: 80%;
+    
+}
+
+.btn-grp {
+    margin: 0px 210px;
+    width: 400px;
+}

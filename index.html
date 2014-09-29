@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html ng-app="bingo">
+    <head>
+        <title>Bingo</title>
+    </head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="main.js"></script>
+    
+    <script src="services/playerListService.js"></script>
+    <script src="controllers/playerListLocalStorageCtrl.js"></script>
+    <script src="controllers/playerListFireCtrl.js"></script>
+    <script src="directives/playerList.js"></script>
+    
+    <script src="services/bingoService.js"></script>
+    <script src="controllers/bingoCtrl.js"></script>
+    <script src="directives/bingoPad.js"></script>
+    
+    <body ng-init="username='guest'">
+        <div class="bingoContainer" ng-controller="bingoCtrl as bgCtrl">
+            <div class="bingoHeader">
+                <span ng-repeat="(i, letter) in ['B','I','N','G','O'] track by $index" ng-class="{striked: (-bingoObj.checkedGroupsCount <= -(i + 1))}">
+                    {{letter}}
+                </span>
+            </div>
+            <bingo-pad bingo-obj="bingoObj" bingo-ctrl="bgCtrl"></bingo-pad>
+        </div>  
+        <div class="playerListHolder" ng-controller="playerListFireCtrl as playerListCtrl">
+        <!--<div class="playerListHolder" ng-controller="playerListLocalStorageCtrl as playerListCtrl">-->
+            <player-list playerlist-ctrl="playerListCtrl"></player-list>
+        </div>
+    </body>
+</html>
