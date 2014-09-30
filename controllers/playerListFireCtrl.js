@@ -10,14 +10,17 @@
 (function () {
     'use strict';
     angular.module('bingo')
-        .controller("playerListFireCtrl", function ($scope, $rootScope, $interval, $timeout, $firebase, playerListService) {
+        .controller("playerListFireCtrl", function ($scope, $rootScope, $interval, $timeout, $location, $firebase, playerListService) {
             
             
             $scope.username = $scope.username + " - " +  Date.now() % 100000;
             $scope.userId = this.userId;
             
+            this.groupName = $location.url().replace("/", "");
+            this.groupName = this.groupName.length ? this.groupName : "Public";
+            
             var self = this;
-            var url = "https://blinding-heat-269.firebaseio.com/playerList";
+            var url = "https://blinding-heat-269.firebaseio.com/groups/" + this.groupName;
             var fireRef = new Firebase(url);
             $scope.playerList = this.playerList = $firebase(fireRef).$asArray();
             

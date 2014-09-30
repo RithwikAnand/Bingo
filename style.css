@@ -87,6 +87,10 @@ td {
     height: 600px;
     border: 1px solid #ddd;
 }
+.playerListHolder .groupName {
+    text-align: center;
+    font: 30px fantasy;
+}
 
 .playerListHolder ul {
     list-style-type: none;
