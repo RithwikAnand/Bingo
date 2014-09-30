@@ -1,3 +1,4 @@
+<div class="groupName">{{playerListCtrl.groupName}}</div>
 <ul>
     <li class="player" ng-repeat="(i, player) in playerListCtrl.playerList track by $index" ng-class="{turn:player.turn}">
         <span ng-hide="!player.position" class="position">{{player.position}}</span>
