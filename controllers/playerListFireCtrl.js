@@ -69,11 +69,10 @@
                 $scope.playerList.$add({
                     name: $scope.username,
                     numbersChecked: [],
-                    turn: !aPlayerList.length,
+                    turn: !aPlayerList.length || aPlayerList.every(function (player) {return !player.turn; }),
                     position: 0
                 }).then(function (player) {
-                    self.nUserIndex = aPlayerList.length - 1;
-                    self.userId = aPlayerList[aPlayerList.length - 1].$id;
+                    self.userId = player.name();
                     onPlayerListChange();
                     $scope.playerList.$watch(onPlayerListChange);
                 });
