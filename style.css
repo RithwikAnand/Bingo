@@ -96,6 +96,7 @@ td {
     margin-left: -40px;
     padding-left: 10px;
     border-bottom: 1px solid #ddd;
+    position: relative;
 }
 
 .playerListHolder ul li.turn {
@@ -104,7 +105,19 @@ td {
 }
 
 .playerListHolder ul li .position {
-    margin-right: 5px;
+    position: absolute;
+    left: -40px;
+    height: 100%;
+    width: 40px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.71);
+    color: rgb(255, 255, 255);
+}
+
+.playerListHolder ul li.turn .position {
+    background: gold;
+    opacity: 0.7;
+    color: black;
 }
 
 .playerListHolder ul li .playerNumber {
